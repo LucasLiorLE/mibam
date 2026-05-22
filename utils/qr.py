@@ -3,13 +3,13 @@
 Requirements:
 - pip install qrcode[pil] pyzbar
 """
+import os
+from pathlib import Path
 from typing import Optional
 from PIL import Image
-import os
 
 import qrcode
 from pyzbar.pyzbar import decode as zbar_decode
-
 
 def generate_qr(
     data: str,
