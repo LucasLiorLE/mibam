@@ -1,5 +1,9 @@
 # personal stuff
 .vscode/
+tests/**/*
+!tests/
+!tests/**/*.py
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

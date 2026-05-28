@@ -2,6 +2,7 @@
 
 Requirements:
 - pip install qrcode[pil] pyzbar
+- zbar on your system
 """
 import os
 from pathlib import Path
@@ -30,13 +31,11 @@ def generate_qr(
 
     img.save(path)
 
-
 def decode_qr(path: str) -> Optional[str]:
     img = Image.open(path)
     decoded = zbar_decode(img)
     if not decoded:
         return None
     return decoded[0].data.decode("utf-8")
-
 
 __all__ = ["generate_qr", "decode_qr"]
